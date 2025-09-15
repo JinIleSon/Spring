@@ -1,0 +1,40 @@
+package kr.co.ch02;
+
+/*
+    날짜 : 2025/09/15
+    이름 : 손진일
+    내용 : Spring IoC/DI 실습하기
+ */
+
+import kr.co.ch02.config.AppConfig;
+import kr.co.ch02.sub1.Hello;
+import kr.co.ch02.sub1.Welcome;
+import kr.co.ch02.sub2.Computer;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class App {
+
+    public static void main(String[] args) {
+
+        // 기존 객체 생성 방식
+        Hello hello = new Hello();
+        Welcome welcome = new Welcome();
+
+        hello.show();
+        welcome.show();
+
+        // 스프링 컨테이너 생성. IoC(제어의 역전)
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class); // 컨테이너 스프링 객체
+
+        // 객체 가져오기
+        Hello helloBean = context.getBean(Hello.class);
+        helloBean.show();
+
+        Welcome welcomeBean = (Welcome) context.getBean("wc");
+        welcomeBean.show();
+
+        Computer com = (Computer) context.getBean("computer"); // 클래스는 Computer이지만 Bean을 가져올 때는 전체 소문자로
+        com.show();
+    }
+}
