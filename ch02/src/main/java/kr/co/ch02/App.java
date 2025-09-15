@@ -10,6 +10,7 @@ import kr.co.ch02.config.AppConfig;
 import kr.co.ch02.sub1.Hello;
 import kr.co.ch02.sub1.Welcome;
 import kr.co.ch02.sub2.Computer;
+import kr.co.ch02.sub3.Service;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -36,5 +37,13 @@ public class App {
 
         Computer com = (Computer) context.getBean("computer"); // 클래스는 Computer이지만 Bean을 가져올 때는 전체 소문자로
         com.show();
+
+        // Spring AOP 실습
+        Service service = (Service) context.getBean("service");
+
+        service.findById();
+        service.register();
+        service.modify();
+        service.remove();
     }
 }
