@@ -17,8 +17,7 @@
     </select>
 
     <update id="updateUser2">
-        update user2 set userName=#{userName}, birth=#{birth}, age=#{age}
-        where userId=#{userId}
+        update user2 set userName=#{userName}, birth=#{birth}, age=#{age} where userId=#{userId}
     </update>
 
     <delete id="deleteUser2">

@@ -7,8 +7,8 @@
 <body>
     <h3>user2 목록</h3>
 
-    <a href="#">처음</a>
-    <a href="#">등록</a>
+    <a th:href="@{/}">처음</a>
+    <a th:href="@{/user2/register}">등록</a>
 
     <table>
         <tr>
@@ -18,14 +18,14 @@
             <th>나이</th>
             <th>관리</th>
         </tr>
-        <tr>
-            <td>a105</td>
-            <td>김유</td>
-            <td>1999-05-15</td>
-            <td>25</td>
+        <tr th:each="user:${dtoList}">
+            <td>[[${user.userId}]]</td>
+            <td>[[${user.userName}]]</td>
+            <td th:text="${user.birth}"></td>
+            <td th:text="${user.age}"></td>
             <td>
-                <a href="#">수정</a>
-                <a href="#">삭제</a>
+                <a th:href="@{/user2/modify(userId=${user.userId})}">수정</a>
+                <a th:href="@{/user2/delete(userId=${user.userId})}">삭제</a>
             </td>
         </tr>
     </table>
