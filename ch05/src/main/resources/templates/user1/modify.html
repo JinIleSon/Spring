@@ -14,11 +14,11 @@
         <table border="1">
             <tr>
                 <td>아이디</td>
-                <td><input type="text" name="uid" readonly th:value="${user1DTO.uid}"/></td>
+                <td><input type="text" name="userId" readonly th:value="${user1DTO.userId}"/></td>
             </tr>
             <tr>
                 <td>이름</td>
-                <td><input type="text" name="name" th:value="${user1DTO.name}"/></td>
+                <td><input type="text" name="userName" th:value="${user1DTO.userName}"/></td>
             </tr>
             <tr>
                 <td>생년월일</td>
@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td>나이</td>
-                <td><input type="birth" name="age" th:value="${user1DTO.age}"/></td>
+                <td><input type="number" name="age" th:value="${user1DTO.age}"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="right">

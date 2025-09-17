@@ -39,9 +39,9 @@ public class User1Controller {
     }
 
     @GetMapping("/user1/modify")
-    public String modify(@RequestParam("uid") String uid, Model model){
+    public String modify(@RequestParam("userId") String userId, Model model){
 
-        User1DTO user1DTO = service.findById(uid);
+        User1DTO user1DTO = service.findById(userId);
 
         model.addAttribute(user1DTO);
 
@@ -55,8 +55,8 @@ public class User1Controller {
     }
 
     @GetMapping("/user1/delete")
-    public String delete(@RequestParam("uid") String uid){
-        service.remove(uid);
+    public String delete(@RequestParam("userId") String userId){
+        service.remove(userId);
         return "redirect:/user1/list";
     }
 }

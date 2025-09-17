@@ -19,13 +19,13 @@
             <th>관리</th>
         </tr>
         <tr th:each="user:${dtoList}">
-            <td>[[${user.uid}]]</td>
-            <td>[[${user.name}]]</td>
+            <td>[[${user.userId}]]</td>
+            <td>[[${user.userName}]]</td>
             <td th:text="${user.birth}"></td>
             <td th:text="${user.age}"></td>
             <td>
-                <a th:href="@{/user1/modify(uid=${user.uid}, age=${user.age})}">수정</a>
-                <a th:href="@{/user1/delete(uid=${user.uid})}">삭제</a>
+                <a th:href="@{/user1/modify(userId=${user.userId}, age=${user.age})}">수정</a>
+                <a th:href="@{/user1/delete(userId=${user.userId})}">삭제</a>
             </td>
         </tr>
     </table>
