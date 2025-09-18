@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.ch05.mapper.User3Mapper">
+
+    <insert id="insert3DTO">
+        insert into user3 values (#{userId}, #{userName}, #{birth}, #{age})
+    </insert>
+
+    <select id="selectAll3DTO" resultType="kr.co.ch05.dto.User3DTO">
+        select * from user3
+    </select>
+
+    <select id="select3DTO" resultType="kr.co.ch05.dto.User3DTO">
+        select * from user3 where userId=#{userId}
+    </select>
+
+    <update id="update3DTO">
+        update user3 set userName=#{userName}, birth=#{birth}, age=#{age} where userId=#{userId}
+    </update>
+
+    <delete id="delete3DTO">
+        delete from user3 where userId=#{userId}
+    </delete>
+</mapper>

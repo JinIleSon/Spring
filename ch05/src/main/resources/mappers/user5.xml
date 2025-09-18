@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.ch05.mapper.User5Mapper">
+
+    <insert id="insertUser5">
+        insert into user5 values (#{userId}, #{userName}, #{birth}, #{age})
+    </insert>
+
+    <select id="selectAllUser5" resultType="kr.co.ch05.dto.User5DTO">
+        select * from user5
+    </select>
+
+    <select id="selectUser5" resultType="kr.co.ch05.dto.User5DTO">
+        select * from user5 where userId=#{userId}
+    </select>
+
+    <update id="updateUser5">
+        update user5 set userName=#{userName}, birth=#{birth}, age=#{age}
+        where userId=#{userId}
+    </update>
+
+    <delete id="deleteUser5">
+        delete from user5 where userId=#{userId}
+    </delete>
+</mapper>
