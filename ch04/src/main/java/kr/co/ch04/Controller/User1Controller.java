@@ -26,6 +26,10 @@ public class User1Controller {
     @PostMapping("/user1/register")
     public String register(User1DTO user1DTO) {
         log.debug(user1DTO.toString());
+        log.info("log info...");
+        log.warn("log warm...");
+        log.error("log error...");
+
         user1Service.save(user1DTO);
         return "redirect:/user1/list";
     }

@@ -7,6 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface User1Mapper {
+
     public void insert(User1DTO user1DTO);
     public User1DTO select(String userId);
     public List<User1DTO> selectAll();
