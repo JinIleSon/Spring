@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>user2::register</title>
+    <title>user3::regitser</title>
 </head>
 <body>
-    <h3>user2 등록</h3>
+    <h3>user3 등록</h3>
 
     <a th:href="@{/}">처음</a>
-    <a th:href="@{/user2/list}">목록</a>
+    <a th:href="@{/user3/list}">목록</a>
 
-    <form th:action="@{/user2/register}" method="post">
+    <form th:action="@{/user3/register}" method="post">
         <table>
             <tr>
                 <td>아이디</td>
@@ -29,7 +29,9 @@
                 <td><input type="text" name="age"></td>
             </tr>
             <tr>
-                <td colspan="2" align="right"><input type="submit" value="등록하기"></td>
+                <td colspan="2" align="right">
+                    <input type="submit" value="등록하기">
+                </td>
             </tr>
         </table>
     </form>
