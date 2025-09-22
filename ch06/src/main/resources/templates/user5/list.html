@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>user5:list</title>
 </head>
 <body>
+    <h3>user5 목록</h3>
 
+    <a th:href="@{/}">처음</a>
+    <a th:href="@{/user5/register}">등록</a>
+
+    <table>
+        <tr>
+            <td>아이디</td>
+            <td>이름</td>
+            <td>생년월일</td>
+            <td>나이</td>
+            <td>관리</td>
+        </tr>
+        <tr th:each="user:${dtoList}">
+            <td>[[${user.userId}]]</td>
+            <td>[[${user.userName}]]</td>
+            <td th:text="${user.birth}"></td>
+            <td th:text="${user.age}"></td>
+            <td>
+                <a th:href="@{/user5/modify(userId=${user.userId})}">수정</a>
+                <a th:href="@{/user5/delete(userId=${user.userId})}">삭제</a>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
