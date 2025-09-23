@@ -3,6 +3,7 @@ package kr.co.ch06.entity.shop;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -25,4 +26,8 @@ public class Customer {
 
     @CreationTimestamp
     private LocalDateTime regDate;
+
+    // 추가필드, 테이블 컬럼을 엔티티에서 제외
+    @Transient
+    private long orderCount;
 }

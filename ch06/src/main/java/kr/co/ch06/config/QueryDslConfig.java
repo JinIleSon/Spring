@@ -1,5 +1,6 @@
 package kr.co.ch06.config;
 
+import com.querydsl.core.annotations.Config;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -13,7 +14,8 @@ public class QueryDslConfig {
     private EntityManager entityManager;
 
     @Bean
-    public JPAQueryFactory jpaQueryFactory(){
+    public JPAQueryFactory jPAQueryFactory(){
         return new JPAQueryFactory(entityManager);
     }
+
 }
