@@ -25,6 +25,7 @@ public class MyUserDetailsService implements UserDetailsService {
         if (optUser.isPresent()) {
             User user = optUser.get();
 
+            // 인증객체 생성
             MyUserDetails myUserDetails = MyUserDetails.builder()
                     .user(user)
                     .build();

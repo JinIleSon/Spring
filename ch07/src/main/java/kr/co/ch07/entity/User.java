@@ -3,6 +3,7 @@ package kr.co.ch07.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import kr.co.ch07.dto.UserDTO;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -18,7 +19,7 @@ import java.time.LocalDateTime;
 public class User {
 
     @Id
-    private String usId;
+    private String usid;
     private String pass;
     private String name;
     private int age;
@@ -26,5 +27,16 @@ public class User {
 
     @CreationTimestamp
     private LocalDateTime regDate;
+
+    public UserDTO toDTO(){
+        return UserDTO.builder()
+                .usid(usid)
+                .pass(pass)
+                .name(name)
+                .age(age)
+                .role(role)
+                .regDate(regDate.toString())
+                .build();
+    }
 
 }

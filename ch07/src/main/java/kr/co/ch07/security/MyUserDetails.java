@@ -25,7 +25,7 @@ public class MyUserDetails implements UserDetails {
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole())); // 계정 권한 앞에 접두어 ROLE_ 작성
 
-        return null;
+        return authorities;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getUsId();
+        return user.getUsid();
     }
 
     @Override
