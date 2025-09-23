@@ -1,0 +1,43 @@
+package kr.co.ch06.entity;
+
+import static com.querydsl.core.types.PathMetadataFactory.*;
+
+import com.querydsl.core.types.dsl.*;
+
+import com.querydsl.core.types.PathMetadata;
+import javax.annotation.processing.Generated;
+import com.querydsl.core.types.Path;
+
+
+/**
+ * QUser5 is a Querydsl query type for User5
+ */
+@Generated("com.querydsl.codegen.DefaultEntitySerializer")
+public class QUser5 extends EntityPathBase<User5> {
+
+    private static final long serialVersionUID = 1506575591L;
+
+    public static final QUser5 user5 = new QUser5("user5");
+
+    public final NumberPath<Integer> age = createNumber("age", Integer.class);
+
+    public final StringPath birth = createString("birth");
+
+    public final StringPath userId = createString("userId");
+
+    public final StringPath userName = createString("userName");
+
+    public QUser5(String variable) {
+        super(User5.class, forVariable(variable));
+    }
+
+    public QUser5(Path<? extends User5> path) {
+        super(path.getType(), path.getMetadata());
+    }
+
+    public QUser5(PathMetadata metadata) {
+        super(User5.class, metadata);
+    }
+
+}
+
