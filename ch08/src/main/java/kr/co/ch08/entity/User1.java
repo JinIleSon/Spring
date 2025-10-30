@@ -12,19 +12,19 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "t_user1")
+@Table(name = "user1")
 public class User1 {
 
     @Id
-    private String userId;
-    private String userName;
+    private String userid;
+    private String name;
     private String birth;
     private int age;
 
     public User1DTO toDTO(){
         return User1DTO.builder()
-                .userId(userId)
-                .userName(userName)
+                .userid(userid)
+                .name(name)
                 .birth(birth)
                 .age(age)
                 .build();

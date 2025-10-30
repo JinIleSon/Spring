@@ -37,12 +37,14 @@ public class User1Controller {
         User1DTO user1DTO = user1Service.getUser(userId);
 
         return ResponseEntity
-                .status(HttpStatus.FOUND)
+                .status(HttpStatus.OK)
                 .body(user1DTO);
     }
 
     @PostMapping("/user1")
     public ResponseEntity<User1DTO> register(@Valid @RequestBody User1DTO user1DTO){
+
+        log.info("user1DTO={}",user1DTO);
         User1DTO savedUser1 = user1Service.save(user1DTO);
 
         return ResponseEntity
@@ -57,7 +59,7 @@ public class User1Controller {
 
         User1DTO modifiedUser1 = user1Service.modify(user1DTO);
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(modifiedUser1);
+        return ResponseEntity.status(HttpStatus.OK).body(modifiedUser1);
     }
 
     @DeleteMapping("/user1/{userId}")

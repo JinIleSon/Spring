@@ -28,6 +28,22 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ch08" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ch08" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/ch09" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/ch09" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/demo" />
         <option name="modules">
           <set>

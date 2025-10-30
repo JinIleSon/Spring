@@ -38,7 +38,7 @@ public class User1Service {
         return list.stream().map(entity -> entity.toDTO()).collect(Collectors.toList());
     }
     public User1DTO modify(User1DTO user1DTO){
-        if(user1Repository.existsById(user1DTO.getUserId())){
+        if(user1Repository.existsById(user1DTO.getUserid())){
             User1 modifiedUser1 = user1Repository.save(user1DTO.toEntity());
             return modifiedUser1.toDTO();
         }
